@@ -1,0 +1,649 @@
+#container{
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+
+}
+#content{
+    display:flex;
+    background:#fff;
+    position:fixed;
+    overflow:hidden;
+    width:100%;
+    z-index:1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+
+}
+#content h1{
+    font-family: 'Allura', cursive;
+    margin-left:10px;
+}
+#content span{
+    color:orange;
+}
+#links {
+    margin-left:270px;
+    margin-top:20px;
+}
+#links a{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:20px;
+    margin:0px 20px;
+    font-weight:bold;
+}
+#links a:hover{
+    transition:900ms ease-in-out;
+    color: orange;
+}
+#butts{
+    margin-top:17px;
+    margin-left:90px;
+}
+#butts button{
+    margin:0px 10px;
+    width:150px;
+    height:33px;
+    
+    background:orange;
+    color:#fff;
+    border:1px solid gray;
+    font-weight:bold;
+    font-size:16px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius:5.5px;
+}
+#butts button:hover{
+    transition:800ms ease-in-out;
+    background:#fff;
+    color:black;
+
+}
+#header{
+    padding-top:150px;
+    padding-left:50px;
+    display:flex;
+    position:relative;
+}
+#text{
+    margin-top:40px;
+}
+#text h1{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:50px;
+    font-weight:bold;
+}
+#text h1::first-letter{
+    color:orange;
+}
+#text p{
+    margin-top:40px;
+    width:80%;
+    margin-left:10px;
+}
+#text button{
+    margin:40px 10px;
+    width:250px;
+    height:43px;
+    background:orange;
+    color:#fff;
+    border:1px solid gray;
+    font-weight:bold;
+    font-size:19px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius:5.5px;
+}
+#text button:hover{
+    transition:900ms ease-in-out;
+    background:#fff;
+    color:#000;
+}
+#clip{
+    width:2900px;
+    height:500px;
+    clip-path: circle(40%);
+    background:orange;
+    position:relative;
+
+   
+}
+#clip img{
+    position:absolute;
+    width:500px;
+  margin-left:150px;
+}
+
+#hr{
+    border-top: 90px solid white;
+    margin-top:60px;
+    position:relative;
+}
+#slider{
+    margin-top:40px;
+}
+
+#services h1{
+    text-align:center;
+    font-weight:bold;
+    position:absolute;
+    margin-top:-100px;
+    margin-left:590px;
+  
+    font-family: 'Quicksand', sans-serif;
+}
+#pro{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin:120px 0px;
+}
+#imgp{
+    width:300px;
+    border-radius:7.5px;
+    margin-left:10px;
+}
+#imgp:hover{
+    opacity:0.5;
+}
+#titlef{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+     font-size:16px;
+     font-weight:bold;
+}
+#pf{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+     font-size:16px;
+     font-weight:bold;
+}
+#buttonf{
+    width:250px;
+    height:33px;
+    margin-left:30px;
+
+    color:#000;
+    border:1px solid gray;
+    font-weight:bold;
+    font-size:16px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius:5.5px;
+}
+#buttonf:hover{
+    transition:900ms ease-in-out;
+    background:orange;
+    color:#fff;
+}
+#pro h1{
+    text-align:center;
+    font-weight:bold;
+    position:absolute;
+    margin-top:-90px;
+    margin-left:590px;
+  
+    font-family: 'Quicksand', sans-serif;
+}
+#feat2{
+    margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-left:-20px;
+}
+#feat2 div{
+    margin:15px 30px;
+}
+#contact{
+    display:flex;
+    margin-top:109px;
+  
+}
+#contact h2{
+    text-align:center;
+    font-weight:bold;
+    position:absolute;
+    margin-top:-160px;
+    margin-left:590px;
+    font-size:33px;
+    font-family: 'Quicksand', sans-serif;
+}
+#div1 p{
+    width:40%;
+    margin-left:10px;
+}
+#div1 h1{
+    font-family: 'Allura', cursive;
+    margin-left:10px;
+}
+#div1 span{
+    color:orange;
+}
+#icons{
+    margin-left:10px;
+}
+#icons button{
+    margin:10px 10px;
+    font-size:25px;
+    color:#FF8C00;
+    background:#fff;
+    border:gray;
+}
+#icons button:hover{
+    transition:1s ease-in-out;
+   background:#000;
+   border:none;
+   opacity:0.9;
+   transform: rotate(360deg);
+}
+#div2{
+    margin-left:-400px;
+}
+#info{
+    margin-left:0px;
+    font-size:31px;
+    font-family: 'Comfortaa', cursive;
+ 
+}
+#div2 button{
+    margin:10px 10px;
+    font-size:15px;
+    color:#FF8C00;
+    border:gray;
+    background:#fff;
+    
+}
+#div2 button:hover{
+    transition:1s ease-in-out;
+   background:#000;
+   border:none;
+   opacity:0.9;
+   transform: scaleY(1.5);
+}
+#div2 p{
+    margin-top:-30px;
+    margin-left:40px;
+}
+#div3 {
+    margin-left:40px;
+}
+#div3 button{
+    margin:10px 0px;
+    background:#fff;
+    color:#FF8C00;
+    border:gray;
+}
+#div3 button:hover{
+    transition:1s ease-in-out;
+   background:#000;
+   border:none;
+   opacity:0.9;
+}
+#div3 a{
+    margin-left:7px;
+    color:#000;
+    text-decoration:none;
+    font-size:17px;
+}
+#div4{
+    margin-left:75px;
+}
+
+#div4 input{
+    width:350px;
+    height:45px;
+    font-size:25px;
+}
+#div4 button{
+    width:100%;
+    margin-top:15px;
+    height:38px;
+    font-size:22px;
+}
+#div4 button:hover{
+    transition:0.4s ease-in-out;
+    background-color:#FF8C00;
+    color:#fff;
+    border:1px solid gray;
+    border-radius:5.5px;
+}
+#hr{
+    border-top: 90px solid white;
+    margin-top:60px;
+}
+#me{
+    margin-left:-150px;
+}
+#me h1{
+    font-size:17px;
+    text-align:center;
+}
+#me span{
+    font-family: 'Dancing Script', cursive;
+    font-weight:bold;
+    font-size:30px;
+}
+#me p{
+    text-align:center;
+    font-size:20px;
+}
+#categ{
+    margin-top:500px;
+}
+#showProduct{
+    margin-top:350px;
+    margin-left:-510px;
+    font-family: 'Comfortaa', cursive;
+    font-weight:bold;
+    font-size:17px;
+    height:40px;
+    text-decoration:none;
+    color:#000;
+}
+#showProduct:hover{
+    transition:1s ease-in-out;
+    background-color:#FF8C00;
+    color:#fff;
+    border:1px solid gray;
+    border-radius:5.5px;
+}
+
+#hr2{
+    border-top: 10.5px solid white;
+    width:2000px;
+  
+    
+}
+#worktime{
+    margin-left:1100px;
+    position:fixed;
+    overflow:hidden;
+    z-index:1;
+
+}
+#worktime h1{
+    color:red;
+}
+#worktime table{
+    background:#fff;
+    margin-top:80px;
+    
+}
+#worktime caption{
+    color:red;
+}
+#worktime td{
+    width:200px;
+    height:33px;
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight:bold;
+}
+#dont{
+    background:red;
+}
+#tr1{
+    font-size:25px;
+}
+#we{
+    background:#fff;
+}
+#we h2{
+    
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:50px;
+    font-weight:bold;
+}
+#we h3{
+    margin-left:900px;
+    font-family: 'Quicksand', sans-serif;
+    color:red;
+    font-size:40px;
+    font-weight:bold;
+}
+#firstletter{
+    color:orange;
+    font-family: 'Great Vibes', cursive;
+}
+#we h2::first-letter{
+    color:orange;
+}
+#ad{
+    display:flex;
+    
+}
+#admins{
+    margin:0px 20px;
+}
+#admins img{
+    width:170px;
+    border-radius:5.9px;
+}
+#admins p{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    font-size:17px;
+    font-weight:bold;;
+}
+#admins span{
+    margin-left:50px;
+    font-family: 'Quicksand', sans-serif;
+     font-size:16px;
+     font-weight:bold;
+}
+#ad1{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+#admin{
+    margin:0px 30px;
+}
+#admin img{
+    width:170px;
+    width:170px;
+    border-radius:5.9px;
+}
+#admin p{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    font-size:17px;
+    font-weight:bold;
+}
+#admin span{
+    margin-left:50px;
+    font-family: 'Quicksand', sans-serif;
+     font-size:16px;
+     font-weight:bold;
+}
+#login{
+    background:#fff;
+    margin-top:70px;
+    position:absolute;
+    margin-left:700px;
+    z-index:1;
+    width:500px;
+    height:300px;
+    position:fixed;
+    overflow:hidden;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+}
+#login h1{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:50px;
+    font-weight:bold;
+    text-align:center;
+}
+#login h1::first-letter{
+    color:orange;
+}
+#login h2{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:40px;
+    font-weight:bold;
+    margin-left:440px;
+    color:red;
+}
+#login p{
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    font-size:20px;
+}
+#logbutt{
+    margin-left:70px;
+}
+#logbutt span{
+    font-size:20px;
+}
+#logbutt button{
+    margin:30px 10px;
+    width:150px;
+    height:33px;
+    
+    background:orange;
+    color:#fff;
+    border:1px solid gray;
+    font-weight:bold;
+    font-size:16px;
+    font-family: 'Quicksand', sans-serif;
+    border-radius:5.5px;
+}
+#logbutt button:hover{
+    transition:800ms ease-in-out;
+    background:#fff;
+    color:black;
+
+}
+
+
+#login2{
+    margin-top:150px;
+    margin-left:480px;
+    width:550px;
+    height:430px;
+    border:0.5px solid gray;
+    background:white;
+    border-radius:7.9px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+   
+}
+#container2 {
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:80px;
+    font-weight:bold;
+    margin-left:320px;
+    position:absolute;
+    margin-top:-130px;
+}
+#container2::first-letter{
+    color:orange;
+}
+#login2 h1{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:50px;
+    font-weight:bold;
+    text-align:center;
+}
+#login2 span{
+    color:orange;
+}
+#login2 p{
+    font-family: 'Quicksand', sans-serif;
+    color:orange;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+#login2 label{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:17px;
+    font-weight:bold;
+    text-align:center;
+    margin-left:20px;
+}
+#login2 input{
+    font-family: 'Quicksand', sans-serif;
+    color:black;
+    font-size:17px;
+    font-weight:bold;
+    text-align:center;
+    margin-left:20px;
+    width:65%;
+    height:33px;
+    border-radius:3px;
+    border:1px solid gray;
+}
+#login2 input:hover{
+    outline-color: orange;
+}
+#login2 #pass{
+    margin-left:25px;
+}
+#inp{
+    margin-top:40px;
+}
+#rem {
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+    margin-left:-70px;
+}
+#rem input{
+    height:20px;
+    
+}
+#rem label{
+    margin-left:240px;
+    position:absolute;
+    font-size:15px;
+    margin-top:3px;
+}
+#rem a{
+    margin-left:400px;
+    position:absolute;
+    font-family: 'Quicksand', sans-serif;
+    font-size:15px;
+    font-weight:bold;
+}
+#login2 button{
+    width:80%;
+    height:33px;
+    font-family: 'Quicksand', sans-serif;
+    font-size:20px;
+    font-weight:bold;
+    margin-left:70px;
+    margin-top:20px;
+    color:black;
+}
+#login2 button:hover{
+    transition:0.4s ease-in-out;
+    background-color:#FF8C00;
+    color:#fff;
+    border:1px solid gray;
+    border-radius:5.5px;
+}
+#icons2{
+    margin-top:20px;
+    margin-left:235px;
+}
+#icons2 i{
+    margin:0px 5px;
+    font-size:20px;
+}
+#icons2 i:hover{
+    transition:0.4s ease-in-out;
+    color:orange;
+    transform:rotate(360deg);
+}
+#havnt{
+   margin-left:189px;
+   margin-top:20px;
+   position:absolute;
+   font-family: 'Quicksand', sans-serif;
+   font-size:15px;
+   font-weight:bold;
+}
