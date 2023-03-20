@@ -1,28 +1,35 @@
-import React  from 'react';
-import ReactDOM from 'react-dom/client';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from 'react'
+import { createRoot } from 'react-dom/client';
+import { Route,Routes,BrowserRouter} from 'react-router-dom';
+import Nav from './Components/Nav';
+import LoginUser from './Components/LoginUser';
+import Admin from './Components/Admin';
+import Products from './Products';
 
-function App(){
-  
-
+const root =createRoot(document.getElementById('root'));
+function App() {
 
   return (
     <div>
-    <h1>hello</h1>
+    <Routes>
+    <Route path='/' element={<LoginUser/>}  />
+    <Route path='/admin' element={<Admin/>}  />
+    <Route path='/nav' element={<Nav/>}  />
+    <Route path='/products' element={<Products/>}  />
     
+    </Routes>
     </div>
-
   )
 }
- root.render(
- 
- 
- <App/> 
-  
- 
-  
- 
-  
- )
+
+root.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+)
+
+
+
+
 
 
