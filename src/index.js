@@ -1,9 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
 import { Route,Routes,BrowserRouter} from 'react-router-dom';
-import Nav from './Components/Nav';
-import LoginUser from './Components/LoginUser';
-import Admin from './Components/Admin';
+import Nav from './Nav';
+import LoginUser from './LoginUser';
+import Admin from './Admin';
 import Products from './Products';
 
 const root =createRoot(document.getElementById('root'));
@@ -12,9 +12,9 @@ function App() {
   return (
     <div>
     <Routes>
-    <Route path='/' element={<LoginUser/>}  />
+    <Route path='/' element={<Nav/>}  />
     <Route path='/admin' element={<Admin/>}  />
-    <Route path='/nav' element={<Nav/>}  />
+    <Route path='/Login' element={<LoginUser/>}  />
     <Route path='/products' element={<Products/>}  />
     
     </Routes>
