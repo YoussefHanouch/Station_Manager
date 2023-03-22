@@ -5,6 +5,7 @@ import Nav from './Nav';
 import LoginUser from './LoginUser';
 import Admin from './Admin';
 import Products from './Products';
+import ForgetPassword from './ForgetPassword';
 
 const root =createRoot(document.getElementById('root'));
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <Route path='/admin' element={<Admin/>}  />
     <Route path='/Login' element={<LoginUser/>}  />
     <Route path='/products' element={<Products/>}  />
+      <Route  path="/forgotPassword" element={<ForgetPassword/>} />
     
     </Routes>
     </div>
