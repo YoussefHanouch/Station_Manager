@@ -17,7 +17,7 @@ function Login() {
    <br></br>
     <div id='rem'>
     <input type={"checkbox"} /><label>Remembre me </label>
-    <a href='#'>Forget password ?</a>
+     <Link  to='/forgotPassword' className='frgt' href=''>Forgot password?</Link>
     </div>
     <br></br>
    <Link to='/nav'> <button>Log in <i class="fa-solid fa-right-to-bracket"></i></button></Link><br></br>
