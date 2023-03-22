@@ -61,7 +61,7 @@ export default function Nav() {
     <h1>Sign in </h1>
     <p>You want to log in as yourself :</p>
     <div id='logbutt'>
-    <Link to='/login'><button>User</button></Link>
+    <Link to='/'><button>User</button></Link>
     <span>Or</span>
     <Link to='/admin'><button>Admin</button></Link><span>?</span>
     </div>
