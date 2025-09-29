@@ -1,120 +1,94 @@
-⛽ Station Manager - React Application
-A modern React.js web application for managing gas stations with responsive design
+🚦 Station Manager - React Application
 
-https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react
-https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript
-https://img.shields.io/badge/CSS3-80.1%2525-1572B6?style=for-the-badge&logo=css3
+Modern React.js web application for managing gas stations efficiently.
+Intuitive user interface, responsive design, and advanced features for administration and station operations.
 
-📁 Project Structure
-🎨 Components Overview
-Component	Description	Last Updated
-Admin.js	Administration panel for station management	2 years ago
-Carousel.js	Image slider component with custom CSS	2 years ago
-Data.js	Data management and state handling	2 years ago
-LoginUser.js	User authentication system	Updated recently
-ForgotPassword.js	Password recovery functionality	2 years ago
-Nav.js	Navigation menu component	Updated recently
-🎭 Styling Files
-File	Purpose	Features
-Carousel.css	Styles for image carousel	Responsive design, animations
-Nav.css	Navigation menu styling	Mobile-friendly, transitions
-Forgotpass.css	Password recovery page styles	Form styling, validation UI
-📊 Technology Stack
+🛠️ Technology Stack
 
-Frontend:    React.js 18.x
-Styling:     CSS3 (80.1%) - Custom stylesheets
-Logic:       JavaScript (19.1%) - ES6+ Features
-Markup:      HTML (0.8%) - JSX templates
-🚀 Key Features
+Frontend: React.js 18.x
 
-🎠 UI Components
-Carousel Component - Image slideshow
+Styling: Custom CSS3 (80.1%)
 
-Navigation Menu - Responsive nav bar
+Logic: JavaScript ES6+ (19.1%)
 
-Admin Panel - Management interface
-
-📱 Responsive Design
-Mobile-first approach
-
-Custom CSS components
-
-Smooth animations and transitions
-
-🛠️ Installation & Setup
-Prerequisites
-Node.js 16.x or higher
-
-npm or yarn package manager
-
-Quick Start
+Markup: HTML / JSX (0.8%)
+🧩 Main Components
+| Component           | Description                           |
+| ------------------- | ------------------------------------- |
+| `Admin.js`          | Admin panel to manage stations        |
+| `Carousel.js`       | Image slider with custom CSS          |
+| `Data.js`           | Data management and application state |
+| `LoginUser.js`      | User authentication system            |
+| `ForgotPassword.js` | Password recovery functionality       |
+| `Nav.js`            | Responsive navigation menu            |
 
 
-# Clone the repository
-git clone [repository-url]
-cd Station_Manager
+🎨 Stylesheets
 
-# Install dependencies
+Carousel.css – Styles for the carousel
+
+Nav.css – Styles for the navigation menu
+
+Forgotpass.css – Styles for the password recovery page
+
+🔑 Key Features
+
+Authentication: Secure login, password recovery, session management
+
+UI Components: Image carousel, responsive navigation menu, full admin panel
+
+Responsive Design: Mobile-first approach, smooth animations and transitions, user-friendly interface
+
+⚡ Design Philosophy
+
+Clean & Minimal UI
+
+Easy Navigation with clear visual hierarchy
+
+Cross-Device Compatibility with fully responsive layout
+
+🚀 Installation
+
+Clone the repository:
+
+git clone https://github.com/USERNAME/Station-Manager.git
+
+
+Install dependencies:
+
 npm install
+# or
+yarn install
 
-# Start development server
+
+Start the application:
+
 npm start
-
-# Build for production
-npm run build
-🎯 Component Details
-Admin.js
-Station management dashboard
-
-User role management
-
-Analytics and reporting
-
-Carousel.js
-Image slider with auto-play
-
-Touch/swipe support
-
-Customizable transition effects
-
-Data.js
-Centralized data management
-
-API integration handlers
-
-State management utilities
+# or
+yarn start
 
 📈 Code Statistics
-CSS: 80.1% - Extensive custom styling
 
-JavaScript: 19.1% - React components and logic
+CSS: 80.1%
 
-HTML: 0.8% - JSX markup
+JavaScript: 19.1%
 
-🔄 Recent Updates
-LoginUser.js - Enhanced authentication flow
+HTML / JSX: 0.8%
 
-Nav.js - Improved navigation experience
+📝 Recent Updates
 
-Ongoing maintenance and optimization
+LoginUser.js – Improved authentication flow
 
-🎨 Design Philosophy
-Clean Interface - Minimalist and intuitive UI
+Nav.js – Enhanced navigation experience
 
-Mobile Responsive - Works seamlessly across devices
+Continuous maintenance and optimization
 
-User-Friendly - Easy navigation and clear visual hierarchy
+🎯 Usage
 
-📝 Usage
-Access Application - Navigate to the main page
+Access the application → main page
 
-User Authentication - Login with credentials
+Authenticate using your credentials
 
-Station Management - Use admin panel for operations
+Manage stations via the admin panel
 
-Navigation - Use responsive menu for different sections
-
-<div align="center">
-⛽ Built for Efficient Station Management
-
-Last Major Update: 2 years ago | Maintenance Ongoing
+Navigate easily with the responsive menu
