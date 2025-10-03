@@ -1,18 +1,83 @@
 import React, { useState } from 'react';
-import { timeSlots,service } from '../Data';
- import './index.css'
+import './index.css';
+import { timeSlots } from '../Data';
+// Données locales si le fichier Data.js n'existe pas
+
 
 const Appointments = () => {
   const [selectedService, setSelectedService] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    phone: '',
+    email: '',
+    vehicle: '',
+    notes: ''
+  });
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic for appointment submission
+    
+    // Préparer les données de rendez-vous
+    const appointmentData = {
+      service: services.find(s => s.id === selectedService),
+      date: selectedDate,
+      time: selectedTime,
+      customer: formData,
+      total: services.find(s => s.id === selectedService)?.price
+    };
+
+    // Sauvegarder dans le localStorage
+    const existingAppointments = JSON.parse(localStorage.getItem('infinityStationAppointments') || '[]');
+    const newAppointment = {
+      id: Date.now(),
+      ...appointmentData,
+      status: 'pending',
+      createdAt: new Date().toISOString()
+    };
+    
+    localStorage.setItem('infinityStationAppointments', JSON.stringify([...existingAppointments, newAppointment]));
+
+    // Afficher confirmation
     alert('Appointment confirmed! We will contact you for confirmation.');
+    
+    // Réinitialiser le formulaire
+    setSelectedService('');
+    setSelectedDate('');
+    setSelectedTime('');
+    setStep(1);
+    setFormData({
+      fullName: '',
+      phone: '',
+      email: '',
+      vehicle: '',
+      notes: ''
+    });
+  };
+
+  const getSelectedService = () => {
+    return services.find(service => service.id === selectedService);
+  };
+
+  const getMinDate = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  };
+
+  const getMaxDate = () => {
+    const maxDate = new Date();
+    maxDate.setMonth(maxDate.getMonth() + 3); // 3 mois maximum
+    return maxDate.toISOString().split('T')[0];
   };
 
   return (
@@ -51,16 +116,20 @@ const Appointments = () => {
             <div>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Choose a Service</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {service.map(service => (
+                {services.map(service => (
                   <div
                     key={service.id}
                     onClick={() => {
                       setSelectedService(service.id);
                       setStep(2);
                     }}
-                    className="border-2 border-gray-200 rounded-lg p-4 sm:p-6 hover:border-purple-500 hover:bg-purple-50 cursor-pointer transition duration-300"
+                    className={`border-2 rounded-lg p-4 sm:p-6 cursor-pointer transition duration-300 ${
+                      selectedService === service.id
+                        ? 'border-purple-500 bg-purple-50'
+                        : 'border-gray-200 hover:border-purple-300 hover:bg-purple-50'
+                    }`}
                   >
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2">{service.name}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{service.name}</h3>
                     <div className="flex justify-between text-gray-600 text-sm sm:text-base">
                       <span>Duration: {service.duration}</span>
                       <span className="font-bold text-purple-600">{service.price}</span>
@@ -75,6 +144,14 @@ const Appointments = () => {
             <div>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Choose Date and Time</h2>
               
+              {/* Service Summary */}
+              {selectedService && (
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+                  <h3 className="font-semibold text-purple-800 mb-2">Selected Service</h3>
+                  <p className="text-purple-700">{getSelectedService()?.name} - {getSelectedService()?.price}</p>
+                </div>
+              )}
+
               {/* Date Selection */}
               <div className="mb-6 sm:mb-8">
                 <label className="block text-base sm:text-lg font-semibold mb-3 sm:mb-4">Appointment Date</label>
@@ -82,9 +159,11 @@ const Appointments = () => {
                   type="date"
                   value={selectedDate}
                   onChange={(e) => setSelectedDate(e.target.value)}
-                  min={new Date().toISOString().split('T')[0]}
+                  min={getMinDate()}
+                  max={getMaxDate()}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                 />
+                <p className="text-xs text-gray-500 mt-2">Available dates: Today to 3 months ahead</p>
               </div>
 
               {/* Time Slots */}
@@ -95,11 +174,12 @@ const Appointments = () => {
                     {timeSlots.map(time => (
                       <button
                         key={time}
+                        type="button"
                         onClick={() => setSelectedTime(time)}
                         className={`p-3 sm:p-4 border-2 rounded-lg font-semibold transition duration-300 text-sm sm:text-base ${
                           selectedTime === time
                             ? 'border-purple-500 bg-purple-100 text-purple-700'
-                            : 'border-gray-200 hover:border-purple-300'
+                            : 'border-gray-200 hover:border-purple-300 hover:bg-purple-50'
                         }`}
                       >
                         {time}
@@ -111,17 +191,21 @@ const Appointments = () => {
 
               <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0 mt-6 sm:mt-8">
                 <button
+                  type="button"
                   onClick={() => setStep(1)}
                   className="px-4 sm:px-6 py-2 sm:py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 text-sm sm:text-base order-2 sm:order-1"
                 >
-                  Back
+                  <i className="fas fa-arrow-left mr-2"></i>
+                  Back to Services
                 </button>
                 <button
+                  type="button"
                   onClick={() => setStep(3)}
                   disabled={!selectedDate || !selectedTime}
-                  className="px-4 sm:px-6 py-2 sm:py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-sm sm:text-base order-1 sm:order-2"
+                  className="px-4 sm:px-6 py-2 sm:py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-sm sm:text-base order-1 sm:order-2 flex items-center justify-center"
                 >
-                  Continue
+                  Continue to Details
+                  <i className="fas fa-arrow-right ml-2"></i>
                 </button>
               </div>
             </div>
@@ -133,41 +217,53 @@ const Appointments = () => {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label className="block text-sm font-semibold mb-2">Full Name</label>
+                    <label className="block text-sm font-semibold mb-2">Full Name *</label>
                     <input
                       type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold mb-2">Phone Number</label>
+                    <label className="block text-sm font-semibold mb-2">Phone Number *</label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                       placeholder="Enter your phone number"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold mb-2">Email Address *</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     required
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="Enter your email"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-2">Vehicle Make and Model</label>
+                  <label className="block text-sm font-semibold mb-2">Vehicle Make and Model *</label>
                   <input
                     type="text"
+                    name="vehicle"
+                    value={formData.vehicle}
+                    onChange={handleInputChange}
                     required
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="e.g., Toyota Corolla 2020"
                   />
                 </div>
@@ -175,31 +271,41 @@ const Appointments = () => {
                 <div>
                   <label className="block text-sm font-semibold mb-2">Additional Notes (optional)</label>
                   <textarea
+                    name="notes"
+                    value={formData.notes}
+                    onChange={handleInputChange}
                     rows="3"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                     placeholder="Any special requirements or notes..."
                   ></textarea>
                 </div>
 
                 {/* Appointment Summary */}
-                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg">
-                  <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Appointment Summary</h3>
+                <div className="bg-gray-50 p-3 sm:p-4 rounded-lg border border-gray-200">
+                  <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base text-gray-800">Appointment Summary</h3>
                   <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between">
-                      <span>Service:</span>
-                      <span className="font-medium">{service.find(s => s.id === selectedService)?.name}</span>
+                      <span className="text-gray-600">Service:</span>
+                      <span className="font-medium text-gray-800">{getSelectedService()?.name}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Date:</span>
-                      <span className="font-medium">{selectedDate}</span>
+                      <span className="text-gray-600">Date:</span>
+                      <span className="font-medium text-gray-800">
+                        {new Date(selectedDate).toLocaleDateString('en-US', {
+                          weekday: 'long',
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Time:</span>
-                      <span className="font-medium">{selectedTime}</span>
+                      <span className="text-gray-600">Time:</span>
+                      <span className="font-medium text-gray-800">{selectedTime}</span>
                     </div>
                     <div className="flex justify-between font-semibold border-t pt-1 sm:pt-2 text-sm sm:text-base">
-                      <span>Total:</span>
-                      <span className="text-purple-600">{service.find(s => s.id === selectedService)?.price}</span>
+                      <span className="text-gray-800">Total:</span>
+                      <span className="text-purple-600">{getSelectedService()?.price}</span>
                     </div>
                   </div>
                 </div>
@@ -208,14 +314,16 @@ const Appointments = () => {
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="px-4 sm:px-6 py-2 sm:py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 text-sm sm:text-base order-2 sm:order-1"
+                    className="px-4 sm:px-6 py-2 sm:py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 text-sm sm:text-base order-2 sm:order-1 flex items-center justify-center"
                   >
+                    <i className="fas fa-arrow-left mr-2"></i>
                     Back
                   </button>
                   <button
                     type="submit"
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold text-sm sm:text-base order-1 sm:order-2"
+                    className="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold text-sm sm:text-base order-1 sm:order-2 flex items-center justify-center"
                   >
+                    <i className="fas fa-calendar-check mr-2"></i>
                     Confirm Appointment
                   </button>
                 </div>
@@ -244,6 +352,10 @@ const Appointments = () => {
                 <li className="flex items-start">
                   <i className="fas fa-phone mt-1 mr-2 text-xs"></i>
                   <span>We'll call you to confirm your appointment within 2 hours</span>
+                </li>
+                <li className="flex items-start">
+                  <i className="fas fa-undo mt-1 mr-2 text-xs"></i>
+                  <span>Free cancellation up to 24 hours before appointment</span>
                 </li>
               </ul>
             </div>
