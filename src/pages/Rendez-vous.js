@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { timeSlots,service } from '../Data';
+ import './index.css'
+
 const Appointments = () => {
   const [selectedService, setSelectedService] = useState('');
   const [selectedDate, setSelectedDate] = useState('');

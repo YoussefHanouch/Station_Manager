@@ -1,3 +1,156 @@
+
+// Services data with real images
+export const servicess= [
+  {
+    id: 'oil-change',
+    name: 'Complete Oil Change',
+    category: 'maintenance',
+    categoryName: 'Maintenance & Service',
+    description: 'Engine oil and oil filter change for optimal performance',
+    fullDescription: 'Our complete oil change service includes changing the engine oil with high-quality synthetic oils, replacing the oil filter, and comprehensive checking of all your vehicle\'s fluid levels. This essential service extends your engine\'s lifespan and improves its performance.',
+    price: '299',
+    oldPrice: '350',
+    duration: '45 min',
+    warranty: '12 months',
+    icon: 'fas fa-oil-can',
+    rating: 4,
+    reviews: 127,
+    image: 'https://images.pexels.com/photos/13065699/pexels-photo-13065699.jpeg',
+    features: [
+      'High-quality synthetic engine oil',
+      'New original oil filter',
+      'Check of all fluid levels',
+      'Oil pan cleaning',
+      'Oil pressure test',
+      'Detailed service report'
+    ]
+  },
+  {
+    id: 'brakes',
+    name: 'Brake System Service',
+    category: 'repair',
+    categoryName: 'Mechanical Repair',
+    description: 'Inspection and replacement of brake pads and discs',
+    fullDescription: 'Our brake system expertise ensures your safety on the road. We perform a complete diagnostic of your brake system and replace worn parts with high-quality components.',
+    price: '599',
+    duration: '2h',
+    warranty: '18 months',
+    icon: 'fas fa-brake-warning',
+    rating: 5,
+    reviews: 89,
+    image: 'https://images.pexels.com/photos/6870307/pexels-photo-6870307.jpeg',
+    features: [
+      'Complete brake system diagnostic',
+      'Front/rear brake pad replacement',
+      'Disc inspection and replacement',
+      'Brake fluid flush and replacement',
+      'Hand brake adjustment',
+      'Road safety test'
+    ]
+  },
+  {
+    id: 'tires',
+    name: 'Tires & Balancing',
+    category: 'tires',
+    categoryName: 'Tires & Wheels',
+    description: 'Mounting, balancing and wheel alignment',
+    fullDescription: 'Proper tires are essential for your safety. We offer mounting, balancing and wheel alignment to ensure even wear and stable driving.',
+    price: '199',
+    duration: '1h',
+    warranty: '6 months',
+    icon: 'fas fa-tire',
+    rating: 4,
+    reviews: 203,
+    image: 'https://media.istockphoto.com/id/1227609881/photo/wheel-alignment-equipment-on-a-car-wheel-in-a-repair-station.jpg?s=1024x1024&w=is&k=20&c=e1LYwaoJtqI7r6gAXdnhSRNB9EblDLydIJaOlI2L55o=',
+    features: [
+      'Tire mounting and dismounting',
+      'High-precision balancing',
+      'Pressure check',
+      'Wheel alignment',
+      'Tire rotation',
+      'Wear inspection'
+    ]
+  },
+  {
+    id: 'battery',
+    name: 'Battery & Electrical',
+    category: 'electronics',
+    categoryName: 'Electrical Systems',
+    description: 'Battery testing and replacement, electrical diagnostic',
+    fullDescription: 'Electrical problems? Our battery diagnostic and replacement service guarantees reliable starting in all circumstances.',
+    price: '449',
+    duration: '30 min',
+    warranty: '24 months',
+    icon: 'fas fa-battery-full',
+    rating: 4,
+    reviews: 54,
+    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    features: [
+      'Complete battery testing',
+      'Professional charging',
+      'Terminal cleaning',
+      'Alternator diagnostic',
+      'Starter motor check',
+      'Guaranteed installation'
+    ]
+  },
+  {
+    id: 'ac',
+    name: 'Air Conditioning',
+    category: 'maintenance',
+    categoryName: 'Comfort & AC',
+    description: 'AC system recharge and maintenance',
+    fullDescription: 'Enjoy fresh, clean air in your cabin. Our AC service includes gas recharge and complete system maintenance.',
+    price: '399',
+    duration: '1h',
+    warranty: '12 months',
+    icon: 'fas fa-snowflake',
+    rating: 4,
+    reviews: 78,
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    features: [
+      'R134a or R1234yf gas recharge',
+      'Cabin filter cleaning',
+      'Compressor performance test',
+      'Circuit leak check',
+      'Cabin disinfection',
+      'Functionality test'
+    ]
+  },
+  {
+    id: 'diagnostic',
+    name: 'Electronic Diagnostic',
+    category: 'electronics',
+    categoryName: 'Advanced Diagnostic',
+    description: 'Complete scan of computers and electronic systems',
+    fullDescription: 'Using our state-of-the-art diagnostic tools, we identify and solve the most complex electronic problems in your vehicle.',
+    price: '249',
+    duration: '1h30',
+    warranty: '3 months',
+    icon: 'fas fa-laptop-medical',
+    rating: 4,
+    reviews: 92,
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    features: [
+      'Scan of all computers',
+      'Detailed fault report',
+      'Error code clearing',
+      'CAN network diagnostic',
+      'Parameter optimization',
+      'Personalized advice'
+    ]
+  }
+];
+
+ export const categories = [
+    { id: 'all', name: 'All Services', icon: 'fas fa-list' },
+    { id: 'maintenance', name: 'Maintenance', icon: 'fas fa-oil-can' },
+    { id: 'repair', name: 'Repair', icon: 'fas fa-tools' },
+    { id: 'tires', name: 'Tires', icon: 'fas fa-tire' },
+    { id: 'electronics', name: 'Electronics', icon: 'fas fa-bolt' },
+    { id: 'bodywork', name: 'Bodywork', icon: 'fas fa-car-crash' }
+  ];
+
 export const products = [
   // 🛢️ HUILES ET LUBRIFIANTS
   {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from './context/CartContext';
 import { products } from '../Data';
+ import './index.css'
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
