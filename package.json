@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "station-manager",
   "version": "1.0.0",
   "homepage": "https://YoussefHanouch.github.io/Station_Manager",
+=======
+  "name": "Station_Manager",
+  "version": "0.1.0",
+>>>>>>> 306e1c6191c042c27a425e63a9ce87498158bfc9
   "private": true,
   "dependencies": {
     "@ionic/react": "^6.5.2",
