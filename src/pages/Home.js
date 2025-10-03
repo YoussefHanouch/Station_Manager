@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {stats,features,services,testimonials,socialLinks,quickLinks} from '../Data'
- import './index.css'
+import './index.css'
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{ fontSize: '16px' }}>
       {/* Hero Section with Image */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 sm:py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -15,24 +15,24 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
             Your Trusted
-            <span className="block text-orange-400 mt-2">Service Station</span>
+            <span className="block text-orange-400 mt-2 text-4xl sm:text-5xl md:text-6xl">Service Station</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
             Exceptional quality automotive services with certified technicians
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <Link 
               to="/appointments" 
-              className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-orange-600 transition duration-300 font-semibold text-base sm:text-lg flex items-center justify-center"
+              className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-orange-600 transition duration-300 font-semibold text-sm sm:text-base flex items-center justify-center"
             >
               <i className="fas fa-calendar-check mr-2"></i>
               Book Appointment
             </Link>
             <Link 
               to="/services" 
-              className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-100 transition duration-300 font-semibold text-base sm:text-lg flex items-center justify-center"
+              className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-100 transition duration-300 font-semibold text-sm sm:text-base flex items-center justify-center"
             >
               <i className="fas fa-tools mr-2"></i>
               Discover Our Services
@@ -47,8 +47,8 @@ const Home = () => {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="p-4 sm:p-6">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -58,8 +58,8 @@ const Home = () => {
       {/* Features Section with Images */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-3 sm:mb-4">Why Choose Us?</h2>
-          <p className="text-lg sm:text-xl text-center text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-3 sm:mb-4">Why Choose Us?</h2>
+          <p className="text-base sm:text-lg text-center text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
             Discover what makes us the ideal partner for your vehicle maintenance
           </p>
           
@@ -71,11 +71,11 @@ const Home = () => {
                   className="flex items-start space-x-4 sm:space-x-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300"
                 >
                   <div className={`p-3 sm:p-4 rounded-full ${feature.color} flex-shrink-0`}>
-                    <i className={`${feature.icon} text-xl sm:text-2xl text-white`}></i>
+                    <i className={`${feature.icon} text-lg sm:text-xl text-white`}></i>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">{feature.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.description}</p>
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 text-gray-800">{feature.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -90,11 +90,11 @@ const Home = () => {
               <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-3">
                   <div className="bg-green-100 p-2 sm:p-3 rounded-full">
-                    <i className="fas fa-shield-alt text-green-600 text-xl sm:text-2xl"></i>
+                    <i className="fas fa-shield-alt text-green-600 text-lg sm:text-xl"></i>
                   </div>
                   <div>
-                    <div className="font-bold text-gray-800 text-sm sm:text-base">12 Month Warranty</div>
-                    <div className="text-xs sm:text-sm text-gray-600">On all our services</div>
+                    <div className="font-bold text-gray-800 text-sm">12 Month Warranty</div>
+                    <div className="text-xs text-gray-600">On all our services</div>
                   </div>
                 </div>
               </div>
@@ -106,8 +106,8 @@ const Home = () => {
       {/* Services Preview with Real Images */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-3 sm:mb-4">Our Popular Services</h2>
-          <p className="text-lg sm:text-xl text-center text-gray-600 mb-8 sm:mb-12 px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-3 sm:mb-4">Our Popular Services</h2>
+          <p className="text-base sm:text-lg text-center text-gray-600 mb-8 sm:mb-12 px-4">
             Complete solutions for your vehicle
           </p>
           
@@ -123,22 +123,22 @@ const Home = () => {
                     alt={service.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                   />
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-orange-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold">
                     {service.price} DH
                   </div>
                 </div>
                 <div className="p-4 sm:p-6 flex-1 flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">{service.name}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed flex-1">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">{service.name}</h3>
+                  <p className="text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed flex-1">
                     {service.description}
                   </p>
                   
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                    <div className="flex items-center text-xs text-gray-500">
                       <i className="fas fa-clock mr-1"></i>
                       {service.duration}
                     </div>
-                    <div className="flex items-center text-xs sm:text-sm text-yellow-500">
+                    <div className="flex items-center text-xs text-yellow-500">
                       <i className="fas fa-star"></i>
                       <span className="ml-1 text-gray-600">{service.rating}</span>
                     </div>
@@ -146,7 +146,7 @@ const Home = () => {
                   
                   <Link 
                     to={`/appointments?service=${service.id}`}
-                    className="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold text-sm sm:text-base flex items-center justify-center"
+                    className="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold text-sm flex items-center justify-center"
                   >
                     <i className="fas fa-calendar-plus mr-2"></i>
                     Book Now
@@ -159,7 +159,7 @@ const Home = () => {
           <div className="text-center mt-8 sm:mt-12">
             <Link 
               to="/services" 
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-base sm:text-lg"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm sm:text-base"
             >
               View all our services
               <i className="fas fa-arrow-right ml-2"></i>
@@ -171,8 +171,8 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-12 sm:py-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-3 sm:mb-4">What Our Customers Say</h2>
-          <p className="text-lg sm:text-xl text-center mb-8 sm:mb-12 opacity-90 px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3 sm:mb-4">What Our Customers Say</h2>
+          <p className="text-base sm:text-lg text-center mb-8 sm:mb-12 opacity-90 px-4">
             Discover the experiences of our satisfied customers
           </p>
           
@@ -189,16 +189,16 @@ const Home = () => {
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4"
                   />
                   <div>
-                    <div className="font-semibold text-sm sm:text-base">{testimonial.name}</div>
-                    <div className="text-blue-200 text-xs sm:text-sm">{testimonial.car}</div>
+                    <div className="font-semibold text-sm">{testimonial.name}</div>
+                    <div className="text-blue-200 text-xs">{testimonial.car}</div>
                   </div>
                 </div>
-                <div className="flex text-yellow-400 mb-3 text-sm sm:text-base">
+                <div className="flex text-yellow-400 mb-3 text-sm">
                   {[...Array(5)].map((_, i) => (
                     <i key={i} className="fas fa-star"></i>
                   ))}
                 </div>
-                <p className="text-blue-100 leading-relaxed text-sm sm:text-base">"{testimonial.comment}"</p>
+                <p className="text-blue-100 leading-relaxed text-sm">"{testimonial.comment}"</p>
               </div>
             ))}
           </div>
@@ -211,9 +211,9 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div>
               <div className="flex items-center mb-3 sm:mb-4">
-                <h3 className="text-xl sm:text-2xl font-bold">Infinity Station</h3>
+                <h3 className="text-lg sm:text-xl font-bold">Infinity Station</h3>
               </div>
-              <p className="text-gray-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-400 mb-3 sm:mb-4 leading-relaxed text-sm">
                 Your trusted partner for all your automotive needs since 2010.
               </p>
               <div className="flex space-x-3 sm:space-x-4">
@@ -223,20 +223,20 @@ const Home = () => {
                     href={social.url} 
                     className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition duration-300"
                   >
-                    <i className={`fab fa-${social.icon} text-base sm:text-lg`}></i>
+                    <i className={`fab fa-${social.icon} text-sm`}></i>
                   </a>
                 ))}
               </div>
             </div>
             
             <div>
-              <h4 className="font-semibold text-lg mb-3 sm:mb-4">Quick Links</h4>
+              <h4 className="font-semibold text-base mb-3 sm:mb-4">Quick Links</h4>
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
                     <Link 
                       to={link.path} 
-                      className="text-gray-400 hover:text-white transition duration-300 flex items-center text-sm sm:text-base"
+                      className="text-gray-400 hover:text-white transition duration-300 flex items-center text-sm"
                     >
                       <i className="fas fa-chevron-right text-xs mr-2"></i>
                       {link.name}
@@ -247,26 +247,26 @@ const Home = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold text-lg mb-3 sm:mb-4">Contact</h4>
-              <ul className="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
+              <h4 className="font-semibold text-base mb-3 sm:mb-4">Contact</h4>
+              <ul className="space-y-2 sm:space-y-3 text-gray-400 text-sm">
                 <li className="flex items-center">
-                  <i className="fas fa-map-marker-alt mr-3 text-blue-500 text-sm sm:text-base"></i>
+                  <i className="fas fa-map-marker-alt mr-3 text-blue-500 text-sm"></i>
                   Boulevard Hassan II, Meknes
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-phone mr-3 text-green-500 text-sm sm:text-base"></i>
+                  <i className="fas fa-phone mr-3 text-green-500 text-sm"></i>
                   +212 5XX-XXXXXX
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-envelope mr-3 text-purple-500 text-sm sm:text-base"></i>
+                  <i className="fas fa-envelope mr-3 text-purple-500 text-sm"></i>
                   contact@infinitystation.ma
                 </li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-lg mb-3 sm:mb-4">Opening Hours</h4>
-              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
+              <h4 className="font-semibold text-base mb-3 sm:mb-4">Opening Hours</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
                 <li className="flex justify-between">
                   <span>Mon - Thu:</span>
                   <span>8AM - 6PM</span>
@@ -287,7 +287,7 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
+          <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400 text-sm">
             <p>&copy; 2024 Infinity Station. All rights reserved. | Developed with <i className="fas fa-heart text-red-500 mx-1"></i> by Youssef Hanouch</p>
           </div>
         </div>
