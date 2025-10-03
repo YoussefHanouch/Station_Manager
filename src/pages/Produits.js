@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from './context/CartContext';
-import { products } from '../Data';
- import './index.css'
-
+import { products,categorie,sortOptions } from '../Data';
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('default');
@@ -11,27 +9,7 @@ const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(6); // Commence avec 6 produits
   const { cart, addToCart } = useCart();
 
-  const categories = [
-    { id: 'all', name: 'All Products' },
-    { id: 'lubrifiants', name: 'Oils & Lubricants' },
-    { id: 'pneus', name: 'Tires' },
-    { id: 'batteries', name: 'Batteries' },
-    { id: 'filtres', name: 'Filters' },
-    { id: 'freinage', name: 'Brakes' },
-    { id: 'moteur', name: 'Engine' },
-    { id: 'entretien', name: 'Maintenance' },
-    { id: 'accessoires', name: 'Accessories' },
-    { id: 'outillage', name: 'Tools' },
-    { id: 'electronique', name: 'Electronics' }
-  ];
-
-  const sortOptions = [
-    { id: 'default', name: 'Default' },
-    { id: 'price-low', name: 'Price: Low to High' },
-    { id: 'price-high', name: 'Price: High to Low' },
-    { id: 'rating', name: 'Highest Rated' },
-    { id: 'name', name: 'Name: A to Z' }
-  ];
+  
 
   const handleAddToCart = (product) => {
     addToCart(product);
@@ -113,7 +91,7 @@ const Products = () => {
               <div>
                 <h3 className="font-semibold text-gray-800 mb-3 text-lg">Categories</h3>
                 <div className="space-y-2">
-                  {categories.map(category => (
+                  {categorie.map(category => (
                     <button
                       key={category.id}
                       onClick={() => {
@@ -191,7 +169,7 @@ const Products = () => {
             {/* Category Filters - Horizontal Scroll on Mobile */}
             <div className="mb-6 lg:mb-8">
               <div className="flex space-x-2 overflow-x-auto pb-2 scrollbar-hide">
-                {categories.map(category => (
+                {categorie.map(category => (
                   <button
                     key={category.id}
                     onClick={() => {

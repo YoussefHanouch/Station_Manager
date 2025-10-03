@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
-
+import Cart from './pages/Cart';
 // Pages Client
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -85,10 +85,13 @@ function PublicNavigation() {
           {/* Right Side Items */}
           <div className="flex items-center space-x-3 sm:space-x-4">
             {/* Cart Icon */}
-            <Link to="/cart" className="relative p-2">
+          <Link 
+              to="/cart" 
+              className="relative p-2 bg-white bg-opacity-20 rounded-lg hover:bg-opacity-30 transition duration-300"
+            >
               <i className="fas fa-shopping-cart text-gray-700 text-lg sm:text-xl hover:text-blue-600 transition duration-300"></i>
               {cart.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center text-[10px] sm:text-xs">
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {cart.length}
                 </span>
               )}
@@ -187,6 +190,7 @@ function App() {
               <Route path="/products" element={<MainLayout><Products /></MainLayout>} />
               <Route path="/appointments" element={<MainLayout><Appointments /></MainLayout>} />
               <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="/login" element={<Login />} />
 
               {/* Routes Admin Protégées */}

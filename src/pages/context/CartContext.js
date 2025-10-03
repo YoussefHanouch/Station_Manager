@@ -46,9 +46,9 @@ const cartReducer = (state, action) => {
     case 'UPDATE_QUANTITY':
       newState = state.map(item =>
         item.id === action.payload.id
-          ? { ...item, quantity: action.payload.quantity }
+          ? { ...item, quantity: Math.max(0, action.payload.quantity) }
           : item
-      );
+      ).filter(item => item.quantity > 0); // Supprimer les items avec quantité 0
       break;
     
     case 'CLEAR_CART':
@@ -86,11 +86,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateQuantity = (productId, quantity) => {
-    if (quantity <= 0) {
-      removeFromCart(productId);
-    } else {
-      dispatch({ type: 'UPDATE_QUANTITY', payload: { id: productId, quantity } });
-    }
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { id: productId, quantity } });
   };
 
   const clearCart = () => {
@@ -105,6 +101,15 @@ export const CartProvider = ({ children }) => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getItemQuantity = (productId) => {
+    const item = cart.find(item => item.id === productId);
+    return item ? item.quantity : 0;
+  };
+
+  const isInCart = (productId) => {
+    return cart.some(item => item.id === productId);
+  };
+
   return (
     <CartContext.Provider value={{
       cart,
@@ -113,7 +118,9 @@ export const CartProvider = ({ children }) => {
       updateQuantity,
       clearCart,
       getCartTotal,
-      getCartItemsCount
+      getCartItemsCount,
+      getItemQuantity,
+      isInCart
     }}>
       {children}
     </CartContext.Provider>

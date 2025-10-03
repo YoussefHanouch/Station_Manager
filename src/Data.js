@@ -151,6 +151,29 @@ export const servicess= [
     { id: 'bodywork', name: 'Bodywork', icon: 'fas fa-car-crash' }
   ];
 
+  
+   export const categorie = [
+      { id: 'all', name: 'All Products' },
+      { id: 'lubrifiants', name: 'Oils & Lubricants' },
+      { id: 'pneus', name: 'Tires' },
+      { id: 'batteries', name: 'Batteries' },
+      { id: 'filtres', name: 'Filters' },
+      { id: 'freinage', name: 'Brakes' },
+      { id: 'moteur', name: 'Engine' },
+      { id: 'entretien', name: 'Maintenance' },
+      { id: 'accessoires', name: 'Accessories' },
+      { id: 'outillage', name: 'Tools' },
+      { id: 'electronique', name: 'Electronics' }
+    ];
+  
+export    const sortOptions = [
+      { id: 'default', name: 'Default' },
+      { id: 'price-low', name: 'Price: Low to High' },
+      { id: 'price-high', name: 'Price: High to Low' },
+      { id: 'rating', name: 'Highest Rated' },
+      { id: 'name', name: 'Name: A to Z' }
+    ];
+
 export const products = [
   // 🛢️ HUILES ET LUBRIFIANTS
   {
