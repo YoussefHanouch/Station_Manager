@@ -1,23 +1,11 @@
 import React, { useState } from 'react';
-
+import { timeSlots,service } from '../Data';
 const Appointments = () => {
   const [selectedService, setSelectedService] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [step, setStep] = useState(1);
 
-  const services = [
-    { id: 'oil-change', name: 'Complete Oil Change', duration: '45 min', price: '299 DH' },
-    { id: 'brakes', name: 'Brake System Service', duration: '2h', price: '599 DH' },
-    { id: 'tires', name: 'Tire Change', duration: '1h', price: '199 DH' },
-    { id: 'diagnostic', name: 'Electronic Diagnostic', duration: '1h30', price: '249 DH' },
-    { id: 'battery', name: 'Battery Replacement', duration: '30 min', price: '149 DH' },
-    { id: 'ac', name: 'AC Service', duration: '1h', price: '349 DH' }
-  ];
-
-  const timeSlots = [
-    '08:00', '09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'
-  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +49,7 @@ const Appointments = () => {
             <div>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Choose a Service</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {services.map(service => (
+                {service.map(service => (
                   <div
                     key={service.id}
                     onClick={() => {
@@ -197,7 +185,7 @@ const Appointments = () => {
                   <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between">
                       <span>Service:</span>
-                      <span className="font-medium">{services.find(s => s.id === selectedService)?.name}</span>
+                      <span className="font-medium">{service.find(s => s.id === selectedService)?.name}</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Date:</span>
@@ -209,7 +197,7 @@ const Appointments = () => {
                     </div>
                     <div className="flex justify-between font-semibold border-t pt-1 sm:pt-2 text-sm sm:text-base">
                       <span>Total:</span>
-                      <span className="text-purple-600">{services.find(s => s.id === selectedService)?.price}</span>
+                      <span className="text-purple-600">{service.find(s => s.id === selectedService)?.price}</span>
                     </div>
                   </div>
                 </div>

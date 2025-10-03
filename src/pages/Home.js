@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {stats,features,services,testimonials,socialLinks,quickLinks} from '../Data'
 
 const Home = () => {
   return (
@@ -293,106 +294,5 @@ const Home = () => {
     </div>
   );
 };
-
-// Data for home page
-const stats = [
-  { value: "10K+", label: "Satisfied Customers" },
-  { value: "15+", label: "Years of Experience" },
-  { value: "50+", label: "Certified Technicians" },
-  { value: "24/7", label: "Customer Support" }
-];
-
-const features = [
-  {
-    icon: "fas fa-user-tie",
-    color: "bg-blue-500",
-    title: "Certified Experts",
-    description: "Our team of technicians holds the most demanding certifications in the automotive industry."
-  },
-  {
-    icon: "fas fa-shield-alt",
-    color: "bg-green-500",
-    title: "12 Month Warranty",
-    description: "All our services and parts are guaranteed for 12 months for your peace of mind."
-  },
-  {
-    icon: "fas fa-bolt",
-    color: "bg-orange-500",
-    title: "Fast Service",
-    description: "Efficient interventions with optimized timelines to minimize your waiting time."
-  },
-  {
-    icon: "fas fa-tag",
-    color: "bg-purple-500",
-    title: "Transparent Pricing",
-    description: "Detailed quotes without surprises. You know exactly what you're paying for."
-  }
-];
-
-const services = [
-  {
-    id: 'oil-change',
-    name: 'Complete Oil Change',
-    description: 'Engine oil and oil filter change with premium quality products.',
-    price: '299',
-    duration: '45 min',
-    rating: '4.9',
-    image: 'https://images.pexels.com/photos/13065699/pexels-photo-13065699.jpeg',
-  },
-  {
-    id: 'brakes',
-    name: 'Brake System',
-    description: 'Complete inspection and replacement of brake discs and pads.',
-    price: '599',
-    duration: '2h',
-    rating: '4.8',
-    image: 'https://images.pexels.com/photos/6870307/pexels-photo-6870307.jpeg',
-  },
-  {
-    id: 'tires',
-    name: 'Tires & Balancing',
-    description: 'Mounting, balancing and wheel alignment for optimal driving.',
-    price: '199',
-    duration: '1h',
-    rating: '4.9',
-    image: 'https://media.istockphoto.com/id/1227609881/photo/wheel-alignment-equipment-on-a-car-wheel-in-a-repair-station.jpg?s=1024x1024&w=is&k=20&c=e1LYwaoJtqI7r6gAXdnhSRNB9EblDLydIJaOlI2L55o=',
-  }
-];
-
-const testimonials = [
-  {
-    name: "Ahmed B.",
-    car: "Mercedes C-Class",
-    comment: "Exceptional service! My vehicle has never run better. Highly recommended.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-  },
-  {
-    name: "Fatima Z.",
-    car: "Renault Clio",
-    comment: "Professional team and transparent about prices. I will definitely come back.",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-  },
-  {
-    name: "Karim M.",
-    car: "BMW 3 Series",
-    comment: "The best garage in Meknes. Competent technicians and impeccable customer service.",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-  }
-];
-
-const socialLinks = [
-  { icon: 'facebook-f', url: '#' },
-  { icon: 'twitter', url: '#' },
-  { icon: 'instagram', url: '#' },
-  { icon: 'linkedin-in', url: '#' }
-];
-
-const quickLinks = [
-  { name: 'Our Services', path: '/services' },
-  { name: 'Online Shop', path: '/products' },
-  { name: 'Book Appointment', path: '/appointments' },
-  { name: 'Contact Us', path: '/contact' },
-  { name: 'About Us', path: '/about' }
-];
 
 export default Home;
