@@ -9,7 +9,7 @@ const Products = () => {
   const [visibleProducts, setVisibleProducts] = useState(6); // Commence avec 6 produits
   const { cart, addToCart } = useCart();
 
-  
+
 
   const handleAddToCart = (product) => {
     addToCart(product);
