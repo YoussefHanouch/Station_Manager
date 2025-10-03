@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from './context/CartContext';
- import './index.css'
+import CheckoutForm from './CheckoutForm';
+import './index.css';
+
 const Cart = () => {
   const { 
     cart, 
@@ -11,6 +13,8 @@ const Cart = () => {
     getCartTotal, 
     getCartItemsCount 
   } = useCart();
+
+  const [showCheckout, setShowCheckout] = useState(false);
 
   const handleQuantityChange = (productId, newQuantity) => {
     if (newQuantity < 1) {
@@ -23,6 +27,31 @@ const Cart = () => {
   const handleRemoveItem = (productId) => {
     removeFromCart(productId);
   };
+
+  const handleProceedToCheckout = () => {
+    setShowCheckout(true);
+  };
+
+  const handleCheckoutComplete = () => {
+    setShowCheckout(false);
+    clearCart();
+  };
+
+  const handleBackToCart = () => {
+    setShowCheckout(false);
+  };
+
+  // Si on est en mode checkout, afficher le formulaire
+  if (showCheckout) {
+    return (
+      <CheckoutForm 
+        cart={cart}
+        total={getCartTotal() + 50 + getCartTotal() * 0.1}
+        onBack={handleBackToCart}
+        onComplete={handleCheckoutComplete}
+      />
+    );
+  }
 
   if (cart.length === 0) {
     return (
@@ -176,7 +205,10 @@ const Cart = () => {
               </div>
 
               <div className="space-y-3">
-                <button className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold flex items-center justify-center">
+                <button 
+                  onClick={handleProceedToCheckout}
+                  className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 font-semibold flex items-center justify-center"
+                >
                   <i className="fas fa-credit-card mr-2"></i>
                   Proceed to Checkout
                 </button>
