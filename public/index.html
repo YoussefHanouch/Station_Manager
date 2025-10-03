@@ -1,37 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CORRECTION : Viewport correct -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS Libraries -->
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-    <link rel="stylesheet" href="output.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://cdn.tailwindcss.com"></script>
-<!-- Mauvaise configuration -->
-<meta name="viewport" content="width=device-width, initial-scale=0.5">
-  <!-- Optionnel : config Tailwind via le script -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1DA1F2',
-            secondary: '#14171A',
-          },
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=ABeeZee&family=Aboreto&family=Aclonica&family=Allerta+Stencil&family=Allura&family=Amatic+SC&family=Carter+One&family=Ceviche+One&family=Chango&family=Chelsea+Market&family=Cinzel+Decorative&family=Cinzel:wght@800&family=Combo&family=Comfortaa:wght@300&family=Cookie&family=Cormorant+SC:wght@300&family=Creepster&family=Croissant+One&family=Dancing+Script:wght@600&family=DynaPuff&family=Eater&family=Fascinate+Inline&family=Faster+One&family=Fredericka+the+Great&family=Fredoka+One&family=Grandstander:wght@200&family=Great+Vibes&family=Kalam:wght@300&family=Kanit:wght@100&family=Kenia&family=Marcellus+SC&family=Mochiy+Pop+One&family=Monoton&family=Nabla&family=Nerko+One&family=Piedra&family=Poiret+One&family=Potta+One&family=Quicksand&family=Red+Hat+Display:ital,wght@1,300&family=Righteous&family=Rock+Salt&family=Rubik+Iso&family=Rubik+Moonrocks&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Rye&family=Shantell+Sans:wght@300&family=Stick+No+Bills:wght@200&family=Syncopate&family=Tangerine&family=Tilt+Neon&family=Titan+One&family=Tourney:ital,wght@1,100;1,400&family=Unbounded:wght@300;400&family=Vast+Shadow&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuration Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1DA1F2',
+                        secondary: '#14171A',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-<link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Aboreto&family=Aclonica&family=Allerta+Stencil&family=Allura&family=Amatic+SC&family=Carter+One&family=Ceviche+One&family=Chango&family=Chelsea+Market&family=Cinzel+Decorative&family=Cinzel:wght@800&family=Combo&family=Comfortaa:wght@300&family=Cookie&family=Cormorant+SC:wght@300&family=Creepster&family=Croissant+One&family=Dancing+Script:wght@600&family=DynaPuff&family=Eater&family=Fascinate+Inline&family=Faster+One&family=Fredericka+the+Great&family=Fredoka+One&family=Grandstander:wght@200&family=Great+Vibes&family=Kalam:wght@300&family=Kanit:wght@100&family=Kenia&family=Marcellus+SC&family=Mochiy+Pop+One&family=Monoton&family=Nabla&family=Nerko+One&family=Piedra&family=Poiret+One&family=Potta+One&family=Quicksand&family=Red+Hat+Display:ital,wght@1,300&family=Righteous&family=Rock+Salt&family=Rubik+Iso&family=Rubik+Moonrocks&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Rye&family=Shantell+Sans:wght@300&family=Stick+No+Bills:wght@200&family=Syncopate&family=Tangerine&family=Tilt+Neon&family=Titan+One&family=Tourney:ital,wght@1,100;1,400&family=Unbounded:wght@300;400&family=Vast+Shadow&display=swap" rel="stylesheet">
-<body >
- 
-<div id="root"></div>
+    <!-- CSS Reset pour forcer les tailles de texte -->
+    <style>
+        /* RESET CRITIQUE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        body {
+            font-size: 1rem !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Forcer les tailles minimales pour les éléments texte */
+        p, span, div, li, td, th, a, button, input, select, textarea {
+            font-size: 1rem !important;
+        }
+        
+        h1 { font-size: 2.5rem !important; }
+        h2 { font-size: 2rem !important; }
+        h3 { font-size: 1.75rem !important; }
+        h4 { font-size: 1.5rem !important; }
+        h5 { font-size: 1.25rem !important; }
+        h6 { font-size: 1.125rem !important; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            html { font-size: 14px !important; }
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+            h3 { font-size: 1.5rem !important; }
+        }
+        
+        @media (max-width: 480px) {
+            html { font-size: 13px !important; }
+        }
+        
+        /* Correction spécifique pour GitHub Pages */
+        #root {
+            font-size: 1rem !important;
+        }
+        
+        /* Empêcher le zoom sur iOS */
+        body {
+            touch-action: pan-x pan-y;
+        }
+    </style>
+
+    <title>Infinity Station - Service Automobile</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Scripts JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- Script de secours pour les tailles de texte -->
+    <script>
+        // Correction d'urgence pour les tailles de texte
+        document.addEventListener('DOMContentLoaded', function() {
+            // Forcer le redimensionnement après chargement
+            setTimeout(function() {
+                document.documentElement.style.fontSize = '16px';
+                document.body.style.fontSize = '1rem';
+            }, 100);
+            
+            // Surveiller les changements de style
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        document.documentElement.style.fontSize = '16px';
+                        document.body.style.fontSize = '1rem';
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['style']
+            });
+        });
+    </script>
 </body>
 </html>
